@@ -1,140 +1,328 @@
-# Free React landing page template
+##################################################
+request 格式
 
-![Open React template preview](https://user-images.githubusercontent.com/2683512/78789364-545e7100-79ad-11ea-9e3c-9528c99cda8e.png)
+1.  search/query=" "
 
-**Open** is a **free React landing page template designed** for developers/makers who want to create a quick and professional landing page for their open source projects, SaaS products, online services, and more.
+2.  card/query=" "
 
-Use it for whatever you want, and be sure to reach us out on [Twitter](https://twitter.com/Cruip_com) if you build anything cool/useful with it.
+3.  article/id="123"
 
-Created and maintained with ❤️ by [Cruip.com](https://cruip.com).
+##################################################
+数据格式
 
-## Live demo
+```json
+{
+  "articles": [],
+  "cards": [
+    {
+      "detail": [
+        "：单源数据、持续增长、自动建模、反馈闭环",
+        "在整个方法论和机制层面在想的解决方案",
+        "基于学习圈理念"
+      ],
+      "title": "hypercycle"
+    },
+    {
+      "detail": [
+        "业界广泛使用的企业 ai 应用开发平台",
+        "给应用系统提供最底层的 ai 内核能力",
+        "一个企业级的 ai 一站式平台"
+      ],
+      "title": "先知"
+    }
+  ],
+  "keywords": {}
+}
+```
 
-Check the live demo here 👉️ [https://open.cruip.com/](https://open.cruip.com/)
+##################################################
+搜索页面
+request:
+query:'string'
 
-## Open PRO
+response:
 
-Looking for more pages and components? Have a look at the **premium version** here 👉️ [https://cruip.com/demos/open-pro/](https://cruip.com/demos/open-pro/)
+- keywords: {title1: [content(num)],title2:[content(num)],....}
+- articles:
+  [
+  {title:xxx,
+  id:xxxx,
+  paragraph-in-short:xxxx,
+  update-time:xxxx,
+  creator:xxxx,
+  source-word:{‘OCR’:'文章包含 ocr/招行属于银行/光学文字识别与 OCR 同义'，。。。},...
+  ]
+- cards:
+  [
+  {title:xxx,
+  detail:[xxx,xxx,xxx]
+  },...
+  ]
 
-*The premium template is built on-the-top of [Tailwind CSS](https://tailwindcss.com/), and React components have been re-built from scratch.* 
+卡片详情页
+request：/query：‘string’
 
-## Table of contents
+response：
 
-* [Usage](#usage)
-  * [Available Scripts](#available-scripts)
-    * [npm start](#npm-start)
-    * [npm test](#npm-test)
-    * [npm run build](#npm-run-build)
-    * [npm run eject](#npm-run-eject)
-  * [Learn More](#learn-more)
-    * [Code Splitting](#code-splitting)
-    * [Analyzing the Bundle Size](#analyzing-the-bundle-size)
-    * [Making a Progressive Web App](#making-a-progressive-web-app)
-    * [Advanced Configuration](#advanced-configuration)
-    * [Deployment](#deployment)
-    * [npm run build fails to minify](#npm-run-build-fails-to-minify)
-  * [Google Analytics Setup](#google-analytics-setup)
-* [Credits](#credits)
-* [Terms and License](#terms-and-license)
-* [About Us](#about-us)
-* [Stay in the loop](#stay-in-the-loop)
+```json
+{
+'titile':xxxx,
+'detail':[{'content':xxxx, 'id':xxx},{},{}]},
+'properties':[],
+'articles':[{title:xxxx,
+id:xxx,
+people:[]},{},{}]
+}
+```
 
-## Usage
+文章详情页
+request：
+query：‘id’
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+response：
 
-### Available Scripts
+```json
+{
+  "title": xxxxx,
+  "content": xxxx
+}
+```
 
-In the project directory, you can run:
+###############################################
 
-#### `npm install`
-To install the dependencies package.
-
-#### `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-#### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-#### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-#### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-### Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-#### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-#### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-#### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-#### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-#### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-#### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-### Google Analytics Setup
-
-This template uses the [React Google Analytics Module](https://github.com/react-ga/react-ga).
-
-In order to track visitors, you need to set an [environment variable](https://create-react-app.dev/docs/adding-custom-environment-variables/) called `REACT_APP_GA_CODE` storing your [GA Tracking ID](https://support.google.com/analytics/answer/7372977).
-
-## Credits
-
-- [Nucleo](https://nucleoapp.com/)
-- [Unsplash](https://unsplash.com/)
-
-## Terms and License
-
-- Released under the [GPL](https://www.gnu.org/licenses/gpl-3.0.html).
-- Copyright 2020 [Cruip](https://cruip.com/).
-- Use it for personal and commercial projects, but please don’t republish, redistribute, or resell the template.
-- Attribution is not required, although it is really appreciated.
-
-## About Us
-
-We're an Italian developer/designer duo creating high-quality design/code resources for developers, makers, and startups.
-
-## Stay in the loop
-
-If you would like to know when we release new resources, you can follow us on [Twitter](https://twitter.com/Cruip_com), or you can subscribe to our monthly [newsletter](https://cruip.com/#subscribe).
+```json
+{
+  "articles": [
+    {
+      "id": "14751083",
+      "people": ["秦一焜", "hudan"],
+      "title": "营销-中信信用卡中心-期数优化"
+    },
+    {
+      "id": "16358762",
+      "people": ["", "sunyonggang"],
+      "title": "准线上实验："
+    },
+    {
+      "id": "12331861",
+      "people": ["", "huangjing"],
+      "title": "营销-恒丰-理财推荐"
+    },
+    {
+      "id": "6947506",
+      "people": ["", "hanfeng"],
+      "title": "营销-招商信用卡-白金分期名单推荐"
+    },
+    {
+      "id": "12334124",
+      "people": ["", "gaoxiaowei"],
+      "title": "信用-光大银行信用卡中心催收"
+    },
+    {
+      "id": "18943197",
+      "people": [
+        "润鹏",
+        "谢金欣",
+        "金欣",
+        "冯伟",
+        "郑佳尔",
+        "武润鹏",
+        "sunyonggang"
+      ],
+      "title": "中信建投进场日报"
+    },
+    {
+      "id": "18957371",
+      "people": ["王珵", "mumu", "陈伟", "sunyonggang"],
+      "title": "中信建投证券先知 bug 跟踪"
+    },
+    {
+      "id": "21955771",
+      "people": ["", "sunyonggang"],
+      "title": "中信建投拼表以及出名单方案"
+    },
+    {
+      "id": "12336807",
+      "people": ["", "hanfeng"],
+      "title": "欺诈-银联-线下信用卡欺诈交易识别"
+    },
+    {
+      "id": "12332733",
+      "people": [
+        "李志伟",
+        "孟一凡",
+        "莫斌",
+        "胡单",
+        "王浏佳",
+        "张观侣",
+        "mengyifan"
+      ],
+      "title": "营销-建行深圳分行-理财推荐"
+    },
+    {
+      "id": "16363443",
+      "people": ["王昱森", "王明", "袁斌", "王萌", "陈潇", "yuanbin"],
+      "title": "营销-交通银行-睡眠客户唤醒"
+    },
+    { "id": "16362501", "people": ["", "zhangzhenyu"], "title": "数据相关" },
+    {
+      "id": "28164450",
+      "people": ["孙永刚", "何晓东", "马亚光", "刘勇", "sunyonggang"],
+      "title": "风险-外贸信托-个人信用评分"
+    },
+    {
+      "id": "50566170",
+      "people": ["", "liuyong"],
+      "title": "风险-华夏银行信用卡中心-M2 逾期"
+    },
+    { "id": "51924988", "people": ["", "zhaoshize"], "title": "先知 EE 迁移" },
+    {
+      "id": "34968131",
+      "people": ["", "chenhao"],
+      "title": "欺诈-广发-境外交易深度学习"
+    },
+    {
+      "id": "24288398",
+      "people": ["马亚", "高晓", "gaoxiaowei"],
+      "title": "风险-民生总行零售风险部-小微企业信用风险评估"
+    },
+    {
+      "id": "16359536",
+      "people": [
+        "刘军",
+        "广发",
+        "张观",
+        "林恺迪",
+        "蔡廷楷",
+        "陈超",
+        "胡博",
+        "郑佳尔",
+        "胡楠",
+        "陈潇",
+        "张观侣",
+        "俞力今",
+        "观侣",
+        "梁海明",
+        "yulijing"
+      ],
+      "title": "营销 - 广发- 通用推荐"
+    },
+    {
+      "id": "53552330",
+      "people": ["陈音", "严萍萍", "chenyan"],
+      "title": "欺诈—浦发养卡识别"
+    },
+    {
+      "id": "50569459",
+      "people": ["", "hexue"],
+      "title": "欺诈-华夏银行信用卡中心-交易反欺诈"
+    },
+    {
+      "id": "62541299",
+      "people": ["", "chengda"],
+      "title": "营销推荐-百胜 delivery 场景 menu 弹屏推荐"
+    },
+    {
+      "id": "63291724",
+      "people": ["李海", "何雪", "hexue"],
+      "title": "工行对公账户异常行为检测"
+    },
+    {
+      "id": "50566428",
+      "people": ["伏玮", "zhaoshize"],
+      "title": "欺诈-工行-转账交易反欺诈"
+    },
+    {
+      "id": "63292501",
+      "people": ["伍思恒", "秦一", "wusiheng"],
+      "title": "反洗钱-重庆人行"
+    },
+    {
+      "id": "65022510",
+      "people": ["", "qinchuan"],
+      "title": "欺诈-工行风险管理部-信用卡申请反欺诈二期交付"
+    },
+    {
+      "id": "65027486",
+      "people": ["", "guanlei"],
+      "title": "工行融 e 借贷款产品营销（天天惠替代场景）"
+    }
+  ],
+  "detail": {
+    "detail": [
+      { "contentid": "75561035", "detail": "一个企业级的 ai 一站式平台" },
+      { "contentid": "72972958", "detail": "企业级软件" },
+      { "contentid": "32322652", "detail": "一个强大的 ai 核心平台" },
+      { "contentid": "75560424", "detail": "很多强力的技术工具" },
+      { "contentid": "75561424", "detail": "很多强力的工具" },
+      { "contentid": "75561424", "detail": "很多强力的工具" },
+      {
+        "contentid": "75539187",
+        "detail": "给应用系统提供最底层的 ai 内核能力"
+      },
+      { "contentid": "72972958", "detail": "企业级软件" },
+      { "contentid": "72952390", "detail": "一个 ai 应用的开发工具" },
+      {
+        "contentid": "74764989",
+        "detail": "业界广泛使用的企业 ai 应用开发平台"
+      },
+      { "contentid": "74744976", "detail": "自定义 dag 的可视化界面" },
+      { "contentid": "74744918", "detail": "按照集群方式管理" },
+      { "contentid": "63293315", "detail": "企业客户" },
+      { "contentid": "72966024", "detail": "idc 评选的机器学习平台" },
+      { "contentid": "72961116", "detail": "一个 ai 应用平台" },
+      { "contentid": "72961116", "detail": "一个 ai 应用平台" },
+      { "contentid": "72956433", "detail": "一个 paas" },
+      { "contentid": "72945088", "detail": "软件版先知" },
+      { "contentid": "74744976", "detail": "自定义 dag 的可视化界面" },
+      { "contentid": "72942648", "detail": "一个开发工具" },
+      { "contentid": "67446919", "detail": "一个人工智能平台" },
+      { "contentid": "72222085", "detail": "不断推动 ai 的产业化落地" },
+      { "contentid": "72222085", "detail": "不断推动 ai 的产业化落地" },
+      { "contentid": "74744918", "detail": "按照集群方式管理" },
+      { "contentid": "60125122", "detail": "一个建模工具" },
+      { "contentid": "68494311", "detail": "行内的亮点" },
+      { "contentid": "68494307", "detail": "多种开源框架" },
+      { "contentid": "68494307", "detail": "一个 ai 开发工具" },
+      { "contentid": "68492795", "detail": "技术平台的定位" },
+      { "contentid": "67437402", "detail": "为互联网行业设计的产品" },
+      { "contentid": "65644815", "detail": "一个 sass 平台" }
+    ],
+    "title": "先知"
+  },
+  "properties": {
+    "依赖于": ["mysql服务", "hdfs上"],
+    "做了": ["后端算法升级"],
+    "内置": ["chrome浏览器", "mysql binlog清理机制"],
+    "分为": ["三个部分"],
+    "助力": ["ai应用的全流程人工智能平台"],
+    "可以": ["curl命令获取数据"],
+    "基于": ["k8s平台"],
+    "处于": ["快速发展期"],
+    "帮助": ["不会代码建模的业务人员从10分到70分"],
+    "废弃掉": ["apiversion"],
+    "提供": [
+      "即时预估结果相关模块",
+      "机器学习模型调研、开发工具",
+      "开发自定义算子以及",
+      "发布自定义算子等",
+      "自定义dag的可视化界面",
+      "不同类别应用的debug功能"
+    ],
+    "支持": [
+      "不同语言的功能",
+      "数据预处理",
+      "所有时间类型",
+      "pmml",
+      "多个租户",
+      "真正意义的多租户"
+    ],
+    "管理": ["其他相关依赖", "cpu、内存和磁盘等资源的分配"],
+    "运行在": ["具有k8s的环境内"],
+    "进行": ["离散特征抽取与连续特征抽取、类型转换、特征组合"],
+    "隔离为": ["一个一个授信网络环境"],
+    "需要": ["有报警系统", "四个配置项", "kafka-bootstrapparams"]
+  },
+  "title": "先知"
+}
+```

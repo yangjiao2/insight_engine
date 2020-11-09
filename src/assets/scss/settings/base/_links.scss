@@ -2,25 +2,25 @@
 
 // Color
 $link--color: (
-	link: 								get-color(light, 1),
-	link-hover: 						null,
-	header-link: 						get-color(light, 2),
-	header-link-hover: 					get-color(light, 1),
-	header-link-mobile: 				get-color(light, 1),
+	link: 								inherit,
+	link-hover: 						get-color(light, 1),
+	header-link: 						null,
+	header-link-hover: 					null,
+	header-link-mobile: 				null,
 	header-link-mobile-hover: 			null,
-	footer-link: 						get-color(light, 2),
-	footer-link-hover: 					get-color(light, 1),
-	footer-block-link: 					get-color(light, 2),
-	footer-block-link-hover: 			get-color(light, 1),
-	button-link: 						get-color(light, 2),
-	button-link-hover: 					get-color(light, 1),
-	func-link: 							null,
-	func-link-hover: 					null,	
+	footer-link: 						get-color(light, 3),
+	footer-link-hover: 					get-color(light, 2),
+	footer-block-link: 					get-color(light, 3),
+	footer-block-link-hover: 			get-color(light, 2),
+	button-link: 						get-color(light, 3),
+	button-link-hover: 					get-color(light, 2),
+	func-link: 							get-color(primary, 1),
+	func-link-hover: 					get-color(primary, 2),	
 	// ↓ Inverted colors
-	link-inverse: 						get-color(light, 3),
-	link-hover-inverse: 				null,
-	header-link-inverse: 				get-color(dark, 3),
-	header-link-hover-inverse:			get-color(primary, 1),
+	link-inverse: 						null,
+	link-hover-inverse: 				get-color(dark, 2),
+	header-link-inverse: 				null,
+	header-link-hover-inverse:			null,
 	footer-link-inverse: 				null,
 	footer-link-hover-inverse: 			null,
 	footer-block-link-inverse: 			null,
@@ -28,7 +28,7 @@ $link--color: (
 	button-link-inverse: 				null,
 	button-link-hover-inverse:			get-color(primary, 1),
 	func-link-inverse: 					null,
-	func-link-hover-inverse:			get-color(primary, 1)	
+	func-link-hover-inverse:			get-color(primary, 2)	
 );
 
 // Font-weight
@@ -41,13 +41,13 @@ $link--weight: (
 );
 
 // Text decoration
-$link-main--decoration: 				none;
+$link-main--decoration: 				null;
 $link-main--decoration-hover: 			null;
-$link-header--decoration: 				null;
+$link-header--decoration: 				none;
 $link-header--decoration-hover:			null;
-$link-footer--decoration: 				null;
+$link-footer--decoration: 				none;
 $link-footer--decoration-hover: 		null;
-$link-footer-block--decoration: 		null;
+$link-footer-block--decoration: 		none;
 $link-footer-block--decoration-hover:	null;
 $link-button--decoration: 				null;
 $link-button--decoration-hover: 		null;
@@ -55,7 +55,7 @@ $link-func--decoration: 				null;
 $link-func--decoration-hover: 			null;
 
 // Text transform
-$link-header--transform: 		null;
+$link-header--transform: 		uppercase;
 $link-footer--transform: 		null;
 $link-footer-block--transform: 	null;
 $link-button--transform: 		null;

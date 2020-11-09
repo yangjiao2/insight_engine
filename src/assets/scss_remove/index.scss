@@ -1,0 +1,14 @@
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $accordion-item--padding-v;
+  padding-bottom: $accordion-item--padding-v;
+  padding-left: $accordion-item--padding-h;
+  padding-right: $accordion-item--padding-h;
+  cursor: pointer;
+
+  span {
+    width: calc(100% - (#{$accordion-icon--size} * 2));
+  }
+}
