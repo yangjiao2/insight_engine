@@ -18,6 +18,25 @@ nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
 
 fuser -k 80/tcp
 
+# deploy
+
+update GLIBCXX_3.4.20
+
+```
+sudo yum install anaconda3
+cp anaconda3/lib/libstdc++.so.6.0.26 /usr/lib64
+sudo rm /usr/lib64/libstdc++.so.6
+ln -s /usr/lib64/libstdc++.so.6.0.26 /usr/lib64/libstdc++.so.6
+```
+
+nginx
+
+```
+strings /usr/lib64/libstdc++.so.6 | grep GLIBCXX
+sudo vim /etc/nginx/nginx.conf
+nginx -t   ###syntax check
+```
+
 # Url apis
 
 ##################################################

@@ -123,7 +123,7 @@ const Search2 = ({
                 bottomOuterDivider
               ></ListFeature>
             </div>
-            <div class="split-item-image" style={{ width: "20%" }}>
+            <div class="split-item-image">
               <CardFeature class="m-0" data={data["cards"]}></CardFeature>
             </div>
           </div>
