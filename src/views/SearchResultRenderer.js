@@ -107,10 +107,14 @@ const Search2 = ({
         />
         <div class="split-wrap">
           <div
-            style={{ alignItems: "baseline", paddingTop: "0px" }}
+            style={{
+              alignItems: "baseline",
+              paddingTop: "0px",
+              flexDirection: "row",
+            }}
             class="split-item"
           >
-            <div class="center-content-mobile" style={{ width: "65%" }}>
+            <div class="center-content-mobile" style={{ width: "60%" }}>
               <ListFeature
                 class="m-0"
                 data={filteredArticle}
@@ -119,7 +123,7 @@ const Search2 = ({
                 bottomOuterDivider
               ></ListFeature>
             </div>
-            <div class="split-item-image" style={{ width: "30%" }}>
+            <div class="split-item-image" style={{ width: "20%" }}>
               <CardFeature class="m-0" data={data["cards"]}></CardFeature>
             </div>
           </div>

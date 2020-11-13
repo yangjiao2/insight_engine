@@ -68,10 +68,7 @@ const CardFeature = ({
             const url = "/card/query=" + title;
             return (
               <div className={tilesClasses}>
-                <div
-                  className="tiles-item"
-                  // data-reveal-delay="200"
-                >
+                <div className="tiles-item">
                   <div className="tiles-item-inner">
                     <div className="testimonial-item-content">
                       {detail.map((val) => {
@@ -80,14 +77,14 @@ const CardFeature = ({
                             style={{ fontSize: "14px", marginBottom: "4px" }}
                             className="text-sm mb-0"
                           >
-                            {val}
+                            <a href={url}>{val}</a>
                           </ul>
                         );
                       })}
                     </div>
                     <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider footer-social">
                       <span className="testimonial-item-name text-color-high">
-                        {title}
+                        <a href={url}>{title}</a>
                       </span>
                       <span>
                         <a href={url}>

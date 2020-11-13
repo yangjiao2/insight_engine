@@ -15,7 +15,7 @@ import ListFeature from "../components/sections/ListFeature";
 
 import ButtonGroup from "../../src/components/elements/ButtonGroup";
 import Button from "../../src/components/elements/Button";
-import Search2 from "./Search2";
+import SearchResultRenderer from "./SearchResultRenderer";
 const { Header, Footer, Sider, Content } = Layout;
 
 const Search = ({
@@ -58,90 +58,8 @@ const Search = ({
         }
         console.log("search", data);
 
-        console.log("serach");
         if (data) {
-          return <Search2 data={data}> </Search2>;
-          // const article = data["articles"];
-          // console.log(article);
-          // console.log(selectedKeyword);
-          // const filterArticle = (articless, keywordss) => {
-          //   if (keywordss.length != 0) {
-          //     return articless.filter((article) => {
-          //       console.log('article["keywords"].some', article["keywords"]);
-          //       return article["keywords"].some((element) =>
-          //         keywordss.includes(element)
-          //       );
-          //     });
-          //   }
-          //   return articless;
-          // };
-
-          // return (
-          //   <>
-          //     <SearchFeature
-          //       className="illustration-section-01"
-          //       topOuterDivider={false}
-          //       bottomOuterDivider={false}
-          //       topDivider={false}
-          //       bottomDivide={false}
-          //       sectionInner={false}
-          //       searchQuery={searchQuery}
-          //     />
-          //     <>
-          //       <div style={{ margin: "18px 0 0 16px" }}>
-          //         <h4>标签: </h4>
-          //         <ButtonGroup
-          //           className="lzpStyle"
-          //           defaultValue="GL"
-          //           buttonStyle="solid"
-          //         >
-          //           {selectedKeyword.map((label) => {
-          //             console.log("aaa", selectedKeyword);
-          //             return (
-          //               <Button
-          //                 key={label}
-          //                 className="button button-primary button-wide-mobile button-sm"
-          //                 style={{ padding: "4px", height: "28px" }}
-          //               >
-          //                 {label}
-          //               </Button>
-          //             );
-          //           })}
-          //         </ButtonGroup>
-          //       </div>
-          //     </>
-          //     <div className="container">
-          //       <SelectorFeature
-          //         data={data["keywords"]}
-          //         selectedKeyword={selectedKeyword}
-          //         handleInsertWord={handleInsertWord}
-          //         showWords={selectedKeyword.join(" | ")}
-          //       />
-          //       <div class="split-wrap">
-          //         <div
-          //           style={{ alignItems: "baseline", paddingTop: "0px" }}
-          //           class="split-item"
-          //         >
-          //           <div class="center-content-mobile" style={{ width: "65%" }}>
-          //             <ListFeature
-          //               class="m-0"
-          //               data={article}
-          //               bottomDivider
-          //               topDivider
-          //               bottomOuterDivider
-          //             ></ListFeature>
-          //           </div>
-          //           <div class="split-item-image" style={{ width: "30%" }}>
-          //             <CardFeature
-          //               class="m-0"
-          //               data={data["cards"]}
-          //             ></CardFeature>
-          //           </div>
-          //         </div>
-          //       </div>
-          //     </div>
-          //   </>
-          // );
+          return <SearchResultRenderer data={data}> </SearchResultRenderer>;
         }
         return null;
       }}

@@ -8,7 +8,7 @@ const FooterSocial = ({ className, ...props }) => {
     <div {...props} className={classes}>
       <ul className="list-reset">
         <li>
-          <a href="servicema@4paradigm.com">
+          <a href="https://www.4paradigm.com/product">
             {/* <svg
               width="16"
               height="16"
@@ -30,7 +30,7 @@ const FooterSocial = ({ className, ...props }) => {
           </a>
         </li>
         <li>
-          <a href="pr_co@4paradigm.com">
+          <a href="https://www.4paradigm.com/solution">
             <svg
               width="16"
               height="16"
@@ -45,7 +45,7 @@ const FooterSocial = ({ className, ...props }) => {
           </a>
         </li>
         <li>
-          <a href="https://google.com/">
+          <a href="https://www.4paradigm.com/solution">
             <svg
               width="16"
               height="16"

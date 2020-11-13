@@ -88,12 +88,7 @@ const Header = ({
           )}
         >
           <Logo />
-          <Link
-            to="/"
-            // className="button"
-            // onClick={closeMenu}
-            style={{ textDecoration: "none" }}
-          >
+          <Link to="/" style={{ textDecoration: "none" }}>
             知识搜索
           </Link>
           {!hideNav && (
