@@ -66,7 +66,7 @@ const ListFeature = ({
             style={{ paddingBottom: "10px" }}
           >
             <h3 style={{ fontSize: "18px" }} className="mt-0 mb-4">
-              <a href={url}>{element["title"]}</a>
+              <Link to={url}>{element["title"]}</Link>
             </h3>
 
             <p style={{ fontSize: "12px" }} className="m-0">

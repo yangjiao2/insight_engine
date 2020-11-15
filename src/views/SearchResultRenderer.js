@@ -18,7 +18,7 @@ import Button from "../components/elements/Button";
 
 const { Header, Footer, Sider, Content } = Layout;
 
-const Search2 = ({
+const SearchResult = ({
   data,
   className,
   topOuterDivider,
@@ -33,7 +33,7 @@ const Search2 = ({
 }) => {
   const { searchQuery } = useParams();
 
-  console.log("->2", searchQuery);
+  // console.log("->2", searchQuery);
   const [selectedKeyword, setSelectedKeyword] = useState([]);
 
   const article = data["articles"];
@@ -132,4 +132,4 @@ const Search2 = ({
     </>
   );
 };
-export default Search2;
+export default SearchResult;

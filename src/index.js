@@ -17,7 +17,7 @@ import "./App.css";
 // // import { Client as Styletron } from "styletron-engine-atomic";
 // import { Server as Styletron } from "styletron-engine-atomic";
 
-const history = createBrowserHistory();
+// const history = createBrowserHistory();
 
 // const debug =
 //   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
@@ -27,12 +27,9 @@ const history = createBrowserHistory();
 // const styles = engine.getStylesheetsHtml();
 
 ReactDOM.render(
-  // <StyletronProvider value={engine} debug={debug} debugAfterHydration>
-  <Router history={history}>
-    {/* <StyleReset /> */}
+  <Router path="/">
     <App />
   </Router>,
-  // </StyletronProvider>,
   document.getElementById("root")
 );
 

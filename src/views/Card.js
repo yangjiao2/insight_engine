@@ -305,7 +305,9 @@ const Card = ({
                       <div className="tiles-item">
                         <div className="tiles-item-inner">
                           <div className="team-item-header">
-                            <Link to={articleURL}>{article.title}</Link>
+                            <Link to={articleURL} replace>
+                              {article.title}
+                            </Link>
                           </div>
                           <div className="team-item-content">
                             <div className="team-item-role text-xxs fw-500 tt-u text-color-primary mb-8">
@@ -319,7 +321,7 @@ const Card = ({
                       </div>
                     );
                   })}
-                  <Graphin data={data["people"]} />
+                  {/* <Graphin data={data["people"]} /> */}
                 </div>
               </div>
             </section>

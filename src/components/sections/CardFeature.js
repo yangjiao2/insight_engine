@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
+import { Link } from "react-router-dom";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -77,17 +78,17 @@ const CardFeature = ({
                             style={{ fontSize: "14px", marginBottom: "4px" }}
                             className="text-sm mb-0"
                           >
-                            <a href={url}>{val}</a>
+                            {val}
                           </ul>
                         );
                       })}
                     </div>
                     <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider footer-social">
                       <span className="testimonial-item-name text-color-high">
-                        <a href={url}>{title}</a>
+                        <Link to={url}>{title}</Link>
                       </span>
                       <span>
-                        <a href={url}>
+                        <Link href={url}>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
@@ -101,7 +102,7 @@ const CardFeature = ({
                             ></path>
                             <path d="M13.664 6.74l-5.05 5.05-2.278-2.28c-.27-.27-.71-.27-.98 0s-.27.71 0 .98l2.77 2.77c.135.134.312.202.49.202.177 0 .354-.068.49-.203l5.537-5.54c.27-.27.27-.708 0-.98-.27-.27-.708-.27-.98 0z"></path>
                           </svg>
-                        </a>
+                        </Link>
                       </span>
                     </div>
                   </div>
