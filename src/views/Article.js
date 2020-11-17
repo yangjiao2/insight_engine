@@ -101,18 +101,20 @@ const Article = ({
                       </span>
                       <ButtonGroup>
                         {Object.keys(cardWord).map((word) => {
-                          const wikiUrl = "/#/card/query=" + cardWord[word];
+                          const wikiUrl = "/card/query=" + cardWord[word];
                           return (
                             <div className="pricing-item-cta mb-8">
-                              <Button
-                                tag="a"
-                                color="secondary"
-                                style={{ color: "white", margin: "4px" }}
-                                href={wikiUrl}
-                                size="sm"
-                              >
-                                {cardWord[word]}
-                              </Button>
+                              <Link to={wikiUrl}>
+                                <Button
+                                  tag="a"
+                                  color="secondary"
+                                  style={{ color: "white", margin: "4px" }}
+                                  // href={wikiUrl}
+                                  size="sm"
+                                >
+                                  {cardWord[word]}
+                                </Button>
+                              </Link>
                             </div>
                           );
                         })}
