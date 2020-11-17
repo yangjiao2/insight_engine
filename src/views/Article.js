@@ -100,8 +100,8 @@ const Article = ({
                         知识卡片 :
                       </span>
                       <ButtonGroup>
-                        {Object.keys(cardWord).map((c_d) => {
-                          const wikiUrl = "/card/query=" + cardWord[c_d];
+                        {Object.keys(cardWord).map((word) => {
+                          const wikiUrl = "/#/card/query=" + cardWord[word];
                           return (
                             <div className="pricing-item-cta mb-8">
                               <Button
@@ -111,7 +111,7 @@ const Article = ({
                                 href={wikiUrl}
                                 size="sm"
                               >
-                                {cardWord[c_d]}
+                                {cardWord[word]}
                               </Button>
                             </div>
                           );
