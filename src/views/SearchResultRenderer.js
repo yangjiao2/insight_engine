@@ -48,12 +48,14 @@ const SearchResult = ({
   return (
     <>
       <SearchFeature
-        className="illustration-section-01"
+        // className="illustration-section-01"
         topOuterDivider={false}
         bottomOuterDivider={false}
         topDivider={false}
         bottomDivide={false}
         sectionInner={false}
+        // sectionInner
+        shrinkInner={false}
         searchQuery={searchQuery}
       />
       <div className="container">

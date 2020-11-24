@@ -50,7 +50,7 @@ const SearchFeature = ({
   const history = useHistory();
   const { param } = useParams();
   console.log(param);
-
+  console.log(searchQuery, "searchQuery");
   const outerClasses = classNames(
     "hero section center-content",
     topOuterDivider && "has-top-divider",
@@ -72,32 +72,8 @@ const SearchFeature = ({
     console.log("onSearch val", queryText);
 
     history.push(`/search/query=${queryText}`, { searchQuery: queryText });
-    // return (
-    //   <Fetch url={HOST + queryText}>
-    //     {({ fetching, failed, data }) => {
-    //       if (fetching) {
-    //         return <div>Loading data...</div>;
-    //       }
-    //       alert("fetching", fetching);
-    //       alert("failed", failed);
-    //       if (failed) {
-    //         return <div>The request did not succeed.</div>;
-    //       }
-    //       alert("data", data);
-    //       if (data) {
-    //       }
-
-    //       return null;
-    //     }}
-    //   </Fetch>
-    // );
   };
 
-  const onFocus = (e) => {
-    // alert(e);
-    // history.push(`/search/query=${e.target}`);
-    // browserHistory.push("/search/query=" + val);
-  };
   const [isLoading, setLoading] = useState(false);
 
   const btnclasses = classNames(
@@ -105,7 +81,7 @@ const SearchFeature = ({
     "button-primary",
     "button-wide-mobile"
   );
-  console.log("searchQuery", props.searchQuery);
+  // console.log("searchQuery", props.searchQuery);
   return (
     <section {...props} className={outerClasses}>
       <div className="container-sm">
@@ -118,21 +94,14 @@ const SearchFeature = ({
               {/* Landing template for <span className="text-color-primary">startups</span>
                */}
             </h1>
-            <div className={shrinkInner && "container-xs"}>
-              {/* <p
-                className="m-0 mb-32 reveal-from-bottom"
-                data-reveal-delay="400"
-                s
-              >
-                打开新世界的大门
-              </p> */}
-
+            <div className={shrinkInner ? "container-xs" : "container"}>
               <Input
-                className="reveal-from-bottom illustration-element-01 form-input"
+                className="form-input " //r illustration-element-01
                 style={{ padding: "16px" }}
-                placeholder={props.searchQuery ?? "🔍"}
+                placeholder={searchQuery ?? "🔍"}
                 // allowClear
                 enterButton="Search"
+                value={searchQuery ? searchQuery.slice(6) : queryText}
                 onChange={(e) => {
                   // console.log("onChange", e.target.value);
                   setQueryText(e.target.value);
