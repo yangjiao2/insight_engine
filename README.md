@@ -15,7 +15,10 @@
 
 # Develop
 
+1. 项目
 npm install
+
+2. nginx
 
 nginx
 nginx -s stop
@@ -24,18 +27,23 @@ sudo nginx -c /etc/nginx/nginx.conf
 
 systemctl restart nginx.service
 
+如果遇到
+- 1. 
+
+```
 错误
 2020/11/12 22:18:13 [error] 28614#0: \*1 directory index of "/home/jiaoyang01/insight*engine/" is forbidden, client: 10.100.115.115, server: *, request: "GET /insight_engine/ HTTP/1.1", host: "172.27.233.23:8800"
-
+```
 chmod -R 777 目录
 
+- 2. 
+```
 nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-
+```
 fuser -k 80/tcp
 
 # Deploy
 
-update GLIBCXX_3.4.20
 
 ```
 sudo yum install anaconda3
