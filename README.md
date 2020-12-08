@@ -3,8 +3,6 @@
 基于自然语言学习的知识图谱界面，用 npm 的 react app 脚手架提供
 
 - 搜索
-
-  ![搜索](https://github.com/yangjiao2/insight_engine/blob/main/demo/Search.png)
   
   ![搜索展示](https://github.com/yangjiao2/insight_engine/blob/main/demo/Search_result.png)
 
