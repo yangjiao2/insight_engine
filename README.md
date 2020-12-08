@@ -11,7 +11,7 @@
   ![卡片展示](https://github.com/yangjiao2/insight_engine/blob/main/demo/Info_card.png)
  
  
- [![Demo video](https://github.com/yangjiao2/insight_engine/blob/main/demo/Search.png)](https://youtu.be/vt5fpE0bzSY)
+ [![Demo video](https://youtu.be/47_4tsS-jz0)
 
 # Develop
 
