@@ -1,3 +1,14 @@
+# Info
+
+基于自然语言学习的知识图谱界面，用 npm 的 react app 脚手架提供
+
+- 搜索
+  ![搜索](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+  ![搜索展示](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
+- 知识卡片展示界面
+  ![卡片展示](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
 # Develop
 
 npm install
@@ -18,7 +29,7 @@ nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
 
 fuser -k 80/tcp
 
-# deploy
+# Deploy
 
 update GLIBCXX_3.4.20
 
