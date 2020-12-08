@@ -1,4 +1,4 @@
-# Info
+# Intro
 
 基于自然语言学习的知识图谱界面，用 npm 的 react app 脚手架提供
 
@@ -11,7 +11,7 @@
   ![卡片展示](https://github.com/yangjiao2/insight_engine/blob/main/demo/Info_card.png)
  
  
- ![Demo video (youtube)][https://github.com/yangjiao2/insight_engine/blob/main/demo/Search_result.png](https://youtu.be/4PsvZwb_e2k)
+ ![Demo video (youtube)](https://youtu.be/4PsvZwb_e2k)
 
 # Develop
 
