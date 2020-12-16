@@ -9,9 +9,9 @@
 - 知识卡片展示界面
 
   ![卡片展示](https://github.com/yangjiao2/insight_engine/blob/main/demo/Info_card.png)
- 
- 
- ![Demo video (youtube)](https://youtu.be/4PsvZwb_e2k)
+
+
+[![Demo video (youtube)](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/4PsvZwb_e2k)
 
 # Develop
 
