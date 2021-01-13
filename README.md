@@ -15,68 +15,79 @@
 
 # Develop
 
-1. 项目
-npm install
-
-2. nginx
-
-nginx
-nginx -s stop
-sudo cat /var/log/nginx/error.log
-sudo nginx -c /etc/nginx/nginx.conf
-
-systemctl restart nginx.service
-
-如果遇到
-- 1. 
-
-
-错误
-2020/11/12 22:18:13 [error] 28614#0: \*1 directory index of "/home/jiaoyang01/insight*engine/" is forbidden, client: 10.100.115.115, server: *, request: "GET /insight_engine/ HTTP/1.1", host: "172.27.233.23:8800"
-
 ```
-chmod -R 777 目录
+npm install & npm start
 ```
 
-- 2. 
-
-nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
-
-```
-fuser -k 80/tcp
-```
+URL: `{LOCALHOST}:3000/insight_engine/#`
 
 # Deploy
 
-
+nginx 配置以及重启
 ```
-sudo yum install anaconda3
-cp anaconda3/lib/libstdc++.so.6.0.26 /usr/lib64
-sudo rm /usr/lib64/libstdc++.so.6
-ln -s /usr/lib64/libstdc++.so.6.0.26 /usr/lib64/libstdc++.so.6
-```
-
-nginx
-
-```
-strings /usr/lib64/libstdc++.so.6 | grep GLIBCXX
+# force nginx stop
+nginx -s stop
+# view nginx error log 
+sudo cat /var/log/nginx/error.log
+# apply change
+sudo nginx -c /etc/nginx/nginx.conf
+# edit nginx config
 sudo vim /etc/nginx/nginx.conf
-nginx -t   ###syntax check
+# syntax check
+nginx -t   
+# restart nginx 
+systemctl restart nginx.service
 ```
 
-# Url apis
+NGINX 配置
+```
+  server {
+        
+        location /insight_engine {
+            alias /home/jiaoyang01/insight_engine/build;
+            index index.html;
+            add_header Cache-Control no-cache;
+            autoindex on;
+            try_files $uri $uri/ /index.html;
+        }
+```        
+
+项目build 
+```
+npm run build
+```
+
+Q & A:
+
+错误
+1、 2020/11/12 22:18:13 [error] 28614#0: \*1 directory index of "/home/jiaoyang01/insight*engine/" is forbidden, client: 10.100.115.115, server: *, request: "GET /insight_engine/ HTTP/1.1", host: "172.27.233.23:8800"
+
+```
+chmod -R 777 目录
+
+```
+2、nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+
+```
+fuser -k 80/tcp
+
+```
+
+
+# APIs
 
 ##################################################
-request 格式
 
-1.  search/query=" "
+#### request 格式
 
-2.  card/query=" "
+1.  search/query="xx"
+
+2.  card/query="xx"
 
 3.  article/id="123"
 
 ##################################################
-数据格式
+#### 数据格式
 
 ```json
 {
@@ -104,59 +115,76 @@ request 格式
 ```
 
 ##################################################
-搜索页面
-request:
-query:'string'
+#### 搜索页面
+request: /query: 'string'
 
-response:
-
-- keywords: {title1: [content(num)],title2:[content(num)],....}
-- articles:
-  [
-  {title:xxx,
-  id:xxxx,
-  paragraph-in-short:xxxx,
-  update-time:xxxx,
-  creator:xxxx,
-  source-word:{‘OCR’:'文章包含 ocr/招行属于银行/光学文字识别与 OCR 同义'，。。。},...
-  ]
-- cards:
-  [
-  {title:xxx,
-  detail:[xxx,xxx,xxx]
-  },...
-  ]
-
-卡片详情页
-request：/query：‘string’
-
-response：
+#### response:
 
 ```json
 {
-'titile':xxxx,
-'detail':[{'content':xxxx, 'id':xxx},{},{}]},
-'properties':[],
-'articles':[{title:xxxx,
-id:xxx,
-people:[]},{},{}]
+    "keywords":{
+        "title1":[
+
+        ]
+    },
+    "articles":[
+        {
+            "title":"xxx",
+            "id":"xxxx",
+            "paragraph-in-short":"xxxx",
+            "update-time":"xxxx",
+            "creator":"xxxx",
+            "source-word":{
+                "OCR":"文章包含 ocr/招行属于银行/光学文字识别与 OCR 同义"
+            }
+        }
+    ],
+    "cards":[
+        {
+            "title":"xxx",
+            "detail":[
+
+            ]
+        }
+    ]
 }
 ```
 
-文章详情页
-request：
-query：‘id’
+#############################################
 
-response：
+#### 卡片详情页
+request：/query：‘string’
+
+#### response：
 
 ```json
 {
-  "title": xxxxx,
-  "content": xxxx
+  'title':xxxx,
+  'detail':[{'content':xxxx, 'id':xxx},{},{}]},
+  'properties':[],
+  'articles':[{
+    title:xxxx,
+    id:xxx,
+    people:[]},{},{}]
+  }]
+}
+```
+################################################
+#### 文章详情页
+
+request：query/: 'id'
+
+#### response：
+
+```json
+{
+  "title": "xxxxx",
+  "content": "xxxx"
 }
 ```
 
 ###############################################
+#### Full context search (version 1.0)
 
 ```json
 {
