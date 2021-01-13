@@ -46,11 +46,12 @@ const SearchFeature = ({
   shrinkInner,
   ...props
 }) => {
-  const [queryText, setQueryText] = useState(searchQuery);
+  const [queryText, setQueryText] = useState(
+    searchQuery ? searchQuery.slice(6) : null
+  );
   const history = useHistory();
   const { param } = useParams();
-  console.log(param);
-  console.log(searchQuery, "searchQuery");
+
   const outerClasses = classNames(
     "hero section center-content",
     topOuterDivider && "has-top-divider",
@@ -70,7 +71,6 @@ const SearchFeature = ({
   const onSearch = (val) => {
     const HOST = "http://172.27.128.72:5035/search?query=";
     console.log("onSearch val", queryText);
-
     history.push(`/search/query=${queryText}`, { searchQuery: queryText });
   };
 
@@ -82,6 +82,8 @@ const SearchFeature = ({
     "button-wide-mobile"
   );
   // console.log("searchQuery", props.searchQuery);
+  console.log(searchQuery, "searchQuery");
+  console.log(queryText, "queryText");
   return (
     <section {...props} className={outerClasses}>
       <div className="container-sm">
@@ -101,9 +103,9 @@ const SearchFeature = ({
                 placeholder={searchQuery ?? "🔍"}
                 // allowClear
                 enterButton="Search"
-                value={searchQuery ? searchQuery.slice(6) : queryText}
+                value={queryText}
                 onChange={(e) => {
-                  // console.log("onChange", e.target.value);
+                  console.log("onChange", queryText);
                   setQueryText(e.target.value);
                 }}
                 onPressEnter={(e) => onSearch(e)}

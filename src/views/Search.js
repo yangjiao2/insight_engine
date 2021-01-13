@@ -8,7 +8,6 @@ import FeaturesTiles from "../components/sections/FeaturesTiles";
 import FeaturesSplit from "../components/sections/FeaturesSplit";
 import CardFeature from "../components/sections/CardFeature";
 import Cta from "../components/sections/Cta";
-// import { Form, Input, Button, Checkbox } from "antd";
 import { Layout } from "antd";
 import Article from "../components/sections/Article2";
 import ListFeature from "../components/sections/ListFeature";

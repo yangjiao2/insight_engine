@@ -80,12 +80,12 @@ const SelectorFeature = ({
     wrapperCol: { offset: 8, span: 16 },
   };
   const [isLoading, setLoading] = useState(false);
-  const categories = ["场景", "公司", "人员", "产品", "技术", "行业"];
+  // const categories = ["场景", "公司", "人员", "产品", "技术", "行业"];
+  console.log(data);
   console.log("props.selectedKeyword", selectedKeyword);
   console.log("props.showWords", showWords);
-  const words = selectedKeyword;
-  const [word, setWord] = useState(selectedKeyword);
-  // alert(word);
+  // const words = selectedKeyword;
+  // const [word, setWord] = useState(selectedKeyword);
   return (
     <section {...props} className={outerClasses}>
       <div className="features-split-inner">
@@ -97,7 +97,6 @@ const SelectorFeature = ({
               buttonStyle="solid"
             >
               {words.map((label) => {
-                console.log("sssssss", label);
                 return (
                   <Button
                     key={showWords}
@@ -122,10 +121,13 @@ const SelectorFeature = ({
               initialValues={{ remember: true }}
               size="default"
             >
-              {categories.map((category) => {
-                // if (data[category].size == 0) {
-                //   return <></>;
-                // }
+              {Object.keys(data).map((category) => {
+                if (
+                  data[category] == undefined ||
+                  data[category].length === 0
+                ) {
+                  return <></>;
+                }
                 return (
                   <Form.Item name="category">
                     <h7
