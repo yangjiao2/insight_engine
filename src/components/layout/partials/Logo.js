@@ -12,7 +12,7 @@ const Logo = ({ className, ...props }) => {
         <a href="https://www.4paradigm.com/">
           <Image
             src="https://www.4paradigm.com/images/thumbs/0000016_logo.png"
-            alt="Open"
+            alt="4Paradigm"
             width={100}
             height={32}
           />

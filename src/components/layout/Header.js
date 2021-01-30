@@ -87,7 +87,7 @@ const Header = ({
             bottomDivider && "has-bottom-divider"
           )}
         >
-          <Logo />
+          {/* <Logo /> */}
           <Link to="/" style={{ textDecoration: "none" }}>
             知识搜索
           </Link>

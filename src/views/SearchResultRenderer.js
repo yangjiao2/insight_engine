@@ -96,13 +96,13 @@ const SearchResult = ({
           data={data["keywords"]}
           selectedKeyword={selectedKeyword}
           handleInsertWord={(val) => {
-            setSelectedKeyword((sk) => {
+            setSelectedKeyword((result) => {
               const index = val.indexOf("(");
               const res = val.slice(0, index);
-              if (sk.includes(res)) {
-                return [...sk];
+              if (result.includes(res)) {
+                return [...result];
               }
-              return [...sk, res];
+              return [...result, res];
             });
           }}
           showWords={selectedKeyword.join(" | ")}
@@ -110,13 +110,16 @@ const SearchResult = ({
         <div class="split-wrap">
           <div
             style={{
-              alignItems: "baseline",
+              alignItems: "end",
               paddingTop: "0px",
               flexDirection: "row",
             }}
             class="split-item"
           >
-            <div class="center-content-mobile" style={{ width: "60%" }}>
+            <div
+              class="center-content-mobile section-inner"
+              style={{ width: "60%" }}
+            >
               <ListFeature
                 class="m-0"
                 data={filteredArticle}
