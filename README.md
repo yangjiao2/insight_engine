@@ -1,3 +1,8 @@
+# Demo
+
+https://yangjiao2.github.io/insight_engine/#/
+search page only due to DB disconnection 
+
 # Intro
 
 基于自然语言学习的知识图谱界面，用 npm 的 react app 脚手架提供
