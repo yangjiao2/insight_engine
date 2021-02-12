@@ -32,7 +32,7 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
           )}
         >
           <div className="footer-top space-between text-xxs">
-            <Logo />
+            {/* <Logo /> */}
             <FooterSocial />
           </div>
           <div className="footer-bottom space-between text-xxs invert-order-desktop">

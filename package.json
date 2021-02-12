@@ -1,4 +1,5 @@
 {
+  "homepage": "https://yangjiao2.github.io/insight_engine",
   "name": "open-react-template",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,7 @@
     "atomize": "^1.0.26",
     "classnames": "^2.2.6",
     "conset": "^2.0.3",
+    "gh-pages": "^3.1.0",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
@@ -32,7 +34,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
